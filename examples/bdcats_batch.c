@@ -65,7 +65,7 @@ main(int argc, char **argv)
     char   obj_name[128];
     float *x, *y, *z;
     float *px, *py, *pz;
-    int *  id1, *id2;
+    int   *id1, *id2;
     //    int       x_dim = 64;
     //    int       y_dim = 64;
     //    int       z_dim = 64;

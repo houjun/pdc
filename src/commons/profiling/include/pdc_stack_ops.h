@@ -14,8 +14,8 @@ typedef void *hash_table_t;
 typedef struct profileEntry {
     struct profileEntry *next;
     struct profileEntry *prev;
-    const char *         ftnkey;
-    const char *         tags;
+    const char          *ftnkey;
+    const char          *tags;
     int64_t              count;
     int64_t              localTotal;
     int64_t              CumTotal;

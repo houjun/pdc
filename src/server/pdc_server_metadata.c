@@ -152,7 +152,7 @@ PDC_Server_metadata_int_hash_key_free(void *key)
 static void
 PDC_Server_metadata_hash_value_free(void *value)
 {
-    pdc_metadata_t *           elt, *tmp;
+    pdc_metadata_t            *elt, *tmp;
     pdc_hash_table_entry_head *head;
 
     FUNC_ENTER(NULL);
@@ -279,9 +279,9 @@ done:
 pdc_metadata_t *
 find_metadata_by_id(uint64_t obj_id)
 {
-    pdc_metadata_t *           ret_value = NULL;
+    pdc_metadata_t            *ret_value = NULL;
     pdc_hash_table_entry_head *head;
-    pdc_metadata_t *           elt;
+    pdc_metadata_t            *elt;
     HashTableIterator          hash_table_iter;
     HashTablePair              pair;
     int                        n_entry;
@@ -347,7 +347,7 @@ static pdc_metadata_t *
 find_identical_metadata(pdc_hash_table_entry_head *entry, pdc_metadata_t *a)
 {
     pdc_metadata_t *ret_value = NULL;
-    BLOOM_TYPE_T *  bloom;
+    BLOOM_TYPE_T   *bloom;
     int             bloom_check;
     char            combined_string[TAG_LEN_MAX];
     pdc_metadata_t *elt;
@@ -800,8 +800,8 @@ PDC_Server_update_metadata(metadata_update_in_t *in, metadata_update_out_t *out)
     perr_t                     ret_value = SUCCEED;
     uint64_t                   obj_id;
     pdc_hash_table_entry_head *lookup_value;
-    uint32_t *                 hash_key = NULL;
-    pdc_metadata_t *           target;
+    uint32_t                  *hash_key = NULL;
+    pdc_metadata_t            *target;
 
     FUNC_ENTER(NULL);
 
@@ -925,7 +925,7 @@ perr_t
 PDC_Server_delete_metadata_by_id(metadata_delete_by_id_in_t *in, metadata_delete_by_id_out_t *out)
 {
     perr_t            ret_value = FAIL;
-    pdc_metadata_t *  elt;
+    pdc_metadata_t   *elt;
     HashTableIterator hash_table_iter;
     HashTablePair     pair;
     uint64_t          target_obj_id;
@@ -1066,7 +1066,7 @@ perr_t
 PDC_delete_metadata_from_hash_table(metadata_delete_in_t *in, metadata_delete_out_t *out)
 {
     perr_t          ret_value = SUCCEED;
-    uint32_t *      hash_key  = NULL;
+    uint32_t       *hash_key  = NULL;
     pdc_metadata_t *target;
 
     FUNC_ENTER(NULL);
@@ -1196,7 +1196,7 @@ PDC_insert_metadata_to_hash_table(gen_obj_id_in_t *in, gen_obj_id_out_t *out)
 {
     perr_t          ret_value = SUCCEED;
     pdc_metadata_t *metadata;
-    uint32_t *      hash_key, i;
+    uint32_t       *hash_key, i;
 #ifdef ENABLE_MULTITHREAD
     // Obtain lock for hash table
     int unlocked = 0;
@@ -1260,7 +1260,7 @@ PDC_insert_metadata_to_hash_table(gen_obj_id_in_t *in, gen_obj_id_out_t *out)
     *hash_key = in->hash_value;
 
     pdc_hash_table_entry_head *lookup_value;
-    pdc_metadata_t *           found_identical;
+    pdc_metadata_t            *found_identical;
 
 #ifdef ENABLE_MULTITHREAD
     // Obtain lock for hash table
@@ -1367,7 +1367,7 @@ PDC_Server_print_all_metadata()
 {
     perr_t                     ret_value = SUCCEED;
     HashTableIterator          hash_table_iter;
-    pdc_metadata_t *           elt;
+    pdc_metadata_t            *elt;
     pdc_hash_table_entry_head *head;
     HashTablePair              pair;
 
@@ -1422,7 +1422,7 @@ PDC_Server_metadata_duplicate_check()
     int                        all_maybe, all_total, all_entry;
     int                        has_dup_obj = 0;
     int                        all_dup_obj = 0;
-    pdc_metadata_t *           elt, *elt_next;
+    pdc_metadata_t            *elt, *elt_next;
     pdc_hash_table_entry_head *head;
 
     FUNC_ENTER(NULL);
@@ -1541,7 +1541,7 @@ PDC_Server_get_partial_query_result(metadata_query_transfer_in_t *in, uint32_t *
     uint32_t                   i;
     uint32_t                   n_buf, iter = 0;
     pdc_hash_table_entry_head *head;
-    pdc_metadata_t *           elt;
+    pdc_metadata_t            *elt;
     HashTableIterator          hash_table_iter;
     int                        n_entry;
     HashTablePair              pair;
@@ -1595,8 +1595,8 @@ PDC_Server_get_kvtag_query_result(pdc_kvtag_t *in, uint32_t *n_meta, uint64_t **
     perr_t                     ret_value = SUCCEED;
     uint32_t                   iter      = 0;
     pdc_hash_table_entry_head *head;
-    pdc_metadata_t *           elt;
-    pdc_kvtag_list_t *         kvtag_list_elt;
+    pdc_metadata_t            *elt;
+    pdc_kvtag_list_t          *kvtag_list_elt;
     HashTableIterator          hash_table_iter;
     int                        n_entry, is_name_match, is_value_match;
     HashTablePair              pair;
@@ -1673,7 +1673,7 @@ PDC_Server_search_with_name_timestep(const char *obj_name, uint32_t hash_key, ui
     perr_t                     ret_value = SUCCEED;
     pdc_hash_table_entry_head *lookup_value;
     pdc_metadata_t             metadata;
-    const char *               name;
+    const char                *name;
 
     FUNC_ENTER(NULL);
 
@@ -1724,7 +1724,7 @@ PDC_Server_search_with_name_hash(const char *obj_name, uint32_t hash_key, pdc_me
     perr_t                     ret_value = SUCCEED;
     pdc_hash_table_entry_head *lookup_value;
     pdc_metadata_t             metadata;
-    const char *               name;
+    const char                *name;
 
     FUNC_ENTER(NULL);
 
@@ -1776,7 +1776,7 @@ PDC_Server_get_local_metadata_by_id(uint64_t obj_id, pdc_metadata_t **res_meta_p
     perr_t ret_value = SUCCEED;
 
     pdc_hash_table_entry_head *head;
-    pdc_metadata_t *           elt;
+    pdc_metadata_t            *elt;
     HashTableIterator          hash_table_iter;
     int                        n_entry;
     HashTablePair              pair;
@@ -1826,7 +1826,7 @@ PDC_Server_get_metadata_by_id_cb(const struct hg_cb_info *callback_info)
 {
     hg_return_t                ret_value;
     hg_handle_t                handle;
-    pdc_metadata_t *           meta = NULL;
+    pdc_metadata_t            *meta = NULL;
     get_metadata_by_id_args_t *cb_args;
     get_metadata_by_id_out_t   output;
 
@@ -1873,7 +1873,7 @@ done:
 perr_t
 PDC_Server_get_metadata_by_id_with_cb(uint64_t obj_id, perr_t (*cb)(), void *args)
 {
-    pdc_metadata_t *           res_meta_ptr = NULL;
+    pdc_metadata_t            *res_meta_ptr = NULL;
     hg_return_t                hg_ret;
     perr_t                     ret_value = SUCCEED;
     uint32_t                   server_id = 0;
@@ -2370,14 +2370,14 @@ PDC_Server_get_storage_meta_by_names(query_read_names_args_t *args)
     hg_handle_t             rpc_handle;
     hg_bulk_t               bulk_handle;
     bulk_rpc_in_t           bulk_rpc_in;
-    void **                 buf_ptrs;
-    hg_size_t *             buf_sizes;
+    void                  **buf_ptrs;
+    hg_size_t              *buf_sizes;
     uint32_t                client_id;
-    char *                  obj_name;
-    pdc_metadata_t *        meta = NULL;
+    char                   *obj_name;
+    pdc_metadata_t         *meta = NULL;
     int                     i = 0, j = 0;
     region_storage_meta_t **all_storage_meta;
-    int *                   all_nregion, total_region;
+    int                    *all_nregion, total_region;
     FUNC_ENTER(NULL);
 
     // Get the storage meta for each queried object name
@@ -2518,7 +2518,7 @@ PDC_add_kvtag_to_list(pdc_kvtag_list_t **list_head, pdc_kvtag_t *tag)
 {
     perr_t            ret_value = SUCCEED;
     pdc_kvtag_list_t *new_list_item;
-    pdc_kvtag_t *     newtag;
+    pdc_kvtag_t      *newtag;
     FUNC_ENTER(NULL);
 
     PDC_kvtag_dup(tag, &newtag);
@@ -2540,7 +2540,7 @@ PDC_Server_add_kvtag(metadata_add_kvtag_in_t *in, metadata_add_tag_out_t *out)
 #ifdef ENABLE_MULTITHREAD
     int unlocked;
 #endif
-    pdc_hash_table_entry_head *  lookup_value;
+    pdc_hash_table_entry_head   *lookup_value;
     pdc_cont_hash_table_entry_t *cont_lookup_value;
 
     FUNC_ENTER(NULL);
@@ -2657,7 +2657,7 @@ PDC_Server_get_kvtag(metadata_get_kvtag_in_t *in, metadata_get_kvtag_out_t *out)
 #ifdef ENABLE_MULTITHREAD
     int unlocked;
 #endif
-    pdc_hash_table_entry_head *  lookup_value;
+    pdc_hash_table_entry_head   *lookup_value;
     pdc_cont_hash_table_entry_t *cont_lookup_value;
 
     FUNC_ENTER(NULL);

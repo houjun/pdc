@@ -12,7 +12,7 @@
 typedef struct {
     pdc_c_var_type_t pdc_type; /**< Data type of the key */
     size_t           size;     /**< Size of the key */
-    void *           key;      /**< Pointer to the key data */
+    void            *key;      /**< Pointer to the key data */
 } PDC_SERDE_Key;
 
 typedef struct {
@@ -38,7 +38,7 @@ typedef struct {
 
 typedef struct {
     PDC_SERDE_Header *header;    /**< Pointer to the header */
-    PDC_SERDE_Data *  data;      /**< Pointer to the data */
+    PDC_SERDE_Data   *data;      /**< Pointer to the data */
     size_t            totalSize; /**< Total size of the serialized data */
 } PDC_SERDE_SerializedData;
 

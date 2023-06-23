@@ -24,7 +24,7 @@ typedef struct {
     uint64_t stripeSize;
     uint64_t is_imageJ;
     uint64_t imageJ_Z;
-    void *   tiff_ptr;
+    void    *tiff_ptr;
     size_t   tiff_size;
 } image_info_t;
 

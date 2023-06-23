@@ -52,8 +52,8 @@ typedef struct pdc_histogram_t { //?????????
     pdc_var_type_t dtype;
     int            nbin;
     double         incr;
-    double *       range;
-    uint64_t *     bin;
+    double        *range;
+    uint64_t      *bin;
 } pdc_histogram_t;
 
 #define SUCCEED 0

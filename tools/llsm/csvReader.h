@@ -8,26 +8,26 @@
 #include "pdc_list.h"
 
 typedef struct csv_header_t {
-    char *               field_name;
+    char                *field_name;
     int                  field_index;
     char                 field_type;
     struct csv_header_t *next;
 } csv_header_t;
 
 typedef struct csv_cell_t {
-    char *             field_value;
-    csv_header_t *     header;
+    char              *field_value;
+    csv_header_t      *header;
     struct csv_cell_t *next;
 } csv_cell_t;
 
 typedef struct csv_row_t {
-    csv_cell_t *      first_cell;
+    csv_cell_t       *first_cell;
     struct csv_row_t *next;
 } csv_row_t;
 
 typedef struct csv_table_t {
     csv_header_t *first_header;
-    csv_row_t *   first_row;
+    csv_row_t    *first_row;
 } csv_table_t;
 
 /**

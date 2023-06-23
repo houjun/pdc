@@ -34,8 +34,8 @@ csv_parse_header(char *line, char *field_types)
 {
     csv_header_t *first_header = NULL;
     csv_header_t *last_header  = NULL;
-    char *        token        = NULL;
-    char *        saveptr      = NULL;
+    char         *token        = NULL;
+    char         *saveptr      = NULL;
     int           field_index  = 0;
     int           in_quotes    = 0;
     int           value_start  = 0;
@@ -89,11 +89,11 @@ csv_parse_header(char *line, char *field_types)
 csv_row_t *
 csv_parse_row(char *line, csv_header_t *header)
 {
-    csv_cell_t *  first_cell     = NULL;
-    csv_cell_t *  last_cell      = NULL;
+    csv_cell_t   *first_cell     = NULL;
+    csv_cell_t   *last_cell      = NULL;
     csv_header_t *current_header = header;
-    char *        token          = NULL;
-    char *        saveptr        = NULL;
+    char         *token          = NULL;
+    char         *saveptr        = NULL;
     int           field_index    = 0;
     int           in_quotes      = 0;
     int           value_start    = 0;
@@ -181,7 +181,7 @@ csv_parse_file(char *file_name, char *field_types)
     }
 
     // Read the first line of the file
-    char *  line = NULL;
+    char   *line = NULL;
     size_t  len  = 0;
     ssize_t read = getline(&line, &len, fp);
 

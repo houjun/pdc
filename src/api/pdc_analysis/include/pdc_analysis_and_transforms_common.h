@@ -46,7 +46,7 @@ struct _pdc_region_analysis_ftn_info {
     int                      client_id;
     int                      ftn_lastResult;
     _pdc_analysis_language_t lang;
-    void *                   data;
+    void                    *data;
 };
 
 /*
@@ -84,9 +84,9 @@ struct _pdc_region_analysis_ftn_info {
  */
 
 struct _pdc_iterator_info {
-    void *  srcStart;         /**** Constant that points to the data buffer  */
-    void *  srcNext;          /**** Updated data pointer for each iteration  */
-    void *  copy_region;      /* Normally unused (see special cases)         */
+    void   *srcStart;         /**** Constant that points to the data buffer  */
+    void   *srcNext;          /**** Updated data pointer for each iteration  */
+    void   *copy_region;      /* Normally unused (see special cases)         */
     size_t  sliceCount;       /**** Total # of slices to return              */
     size_t  sliceNext;        /* Current count that we are going to return   */
     size_t  sliceResetCount;  /* For 3d, when to recalculate 'srcNext'       */
@@ -117,7 +117,7 @@ struct _pdc_iterator_info {
 struct _pdc_my_rpc_state {
     hg_int64_t  value;
     hg_size_t   size;
-    void *      buffer;
+    void       *buffer;
     hg_bulk_t   bulk_handle;
     hg_handle_t handle;
 };

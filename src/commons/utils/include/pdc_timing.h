@@ -130,8 +130,8 @@ typedef struct pdc_timestamp {
 } pdc_timestamp;
 
 pdc_server_timing *pdc_server_timings;
-pdc_timestamp *    pdc_buf_obj_map_timestamps;
-pdc_timestamp *    pdc_buf_obj_unmap_timestamps;
+pdc_timestamp     *pdc_buf_obj_map_timestamps;
+pdc_timestamp     *pdc_buf_obj_unmap_timestamps;
 
 pdc_timestamp *pdc_obtain_lock_write_timestamps;
 pdc_timestamp *pdc_obtain_lock_read_timestamps;

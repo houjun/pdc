@@ -99,7 +99,7 @@ main(int argc, char **argv)
     pdcid_t obj_id, obj_prop;
     pdcid_t local_region_id, global_region_id;
 
-    double * local_buffer   = (double *)malloc(g_x_ept * g_y_ept * sizeof(double));
+    double  *local_buffer   = (double *)malloc(g_x_ept * g_y_ept * sizeof(double));
     uint64_t dims[NUM_DIMS] = {g_x_ept, g_y_ept};
     uint64_t local_offsets[NUM_DIMS], global_offsets[NUM_DIMS];
     local_offsets[0]  = 0;

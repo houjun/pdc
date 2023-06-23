@@ -117,7 +117,7 @@ PDC_timing_report(const char *prefix)
     pdc_timing max_timings;
     int        rank;
     char       filename[256], header[256];
-    FILE *     stream;
+    FILE      *stream;
     char       hostname[HOST_NAME_MAX];
     time_t     now;
 
@@ -365,7 +365,7 @@ PDC_server_timing_report()
     pdc_server_timing max_timings;
     int               rank;
     char              filename[256];
-    FILE *            stream;
+    FILE             *stream;
 
     //    char              hostname[HOST_NAME_MAX];
     time_t now;

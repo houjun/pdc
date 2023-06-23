@@ -68,7 +68,7 @@ typedef enum { C_lang = 0, FORTRAN_lang, PYTHON_lang, JULIA_lang, N_LANGUAGES } 
 /* Library Private Structs */
 /***************************/
 struct _pdc_class {
-    char *  name;
+    char   *name;
     pdcid_t local_id;
 };
 

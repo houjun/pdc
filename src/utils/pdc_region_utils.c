@@ -33,7 +33,7 @@ PDC_region_overlap_detect(int ndim, uint64_t *offset1, uint64_t *size1, uint64_t
     for (i = 0; i < ndim; ++i) {
         output_offset[0][i] = offset2[i] < offset1[i] ? offset1[i] : offset2[i];
         output_size[0][i]   = ((offset2[i] + size2[i] < offset1[i] + size1[i]) ? (offset2[i] + size2[i])
-                                                                             : (offset1[i] + size1[i])) -
+                                                                               : (offset1[i] + size1[i])) -
                             output_offset[0][i];
     }
 
@@ -49,7 +49,7 @@ memcpy_subregion(int ndim, uint64_t unit, pdc_access_t access_type, char *buf, u
                  uint64_t *sub_offset, uint64_t *sub_size)
 {
     uint64_t i, j;
-    char *   ptr, *target_buf, *src_buf;
+    char    *ptr, *target_buf, *src_buf;
 
     if (ndim == 1) {
         target_buf = sub_buf;
@@ -105,7 +105,7 @@ memcpy_overlap_subregion(int ndim, uint64_t unit, char *buf, uint64_t *offset, u
                          uint64_t *offset2, uint64_t *size2, uint64_t *overlap_offset, uint64_t *overlap_size)
 {
     uint64_t i, j;
-    char *   target_buf, *src_buf;
+    char    *target_buf, *src_buf;
 
     switch (ndim) {
         case 1: {

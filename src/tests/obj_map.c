@@ -71,7 +71,7 @@ main(int argc, char **argv)
     uint64_t       dims[2]          = {3, 3};
     uint64_t       offset[2]        = {1, 1};
     uint64_t       rdims[2]         = {2, 2};
-    char *         env_str          = getenv("PDC_OBJ_NAME");
+    char          *env_str          = getenv("PDC_OBJ_NAME");
     char           name_mode[6][32] = {"Random Obj Names", "INVALID!", "One Obj Name",
                              "INVALID!",         "INVALID!", "Four Obj Names"};
 

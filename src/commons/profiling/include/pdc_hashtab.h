@@ -128,7 +128,7 @@ struct htab {
     htab_free  free_f;
 
     /* Alternate allocate/free functions, which take an extra argument.  */
-    void *              alloc_arg;
+    void               *alloc_arg;
     htab_alloc_with_arg alloc_with_arg_f;
     htab_free_with_arg  free_with_arg_f;
 
@@ -162,9 +162,9 @@ extern void htab_set_functions_ex(htab_t, htab_hash, htab_eq, htab_del, void *, 
 extern void htab_delete(htab_t);
 extern void htab_empty(htab_t);
 
-extern void * htab_find(htab_t, const void *);
+extern void  *htab_find(htab_t, const void *);
 extern void **htab_find_slot(htab_t, const void *, enum insert_option);
-extern void * htab_find_with_hash(htab_t, const void *, hashval_t);
+extern void  *htab_find_with_hash(htab_t, const void *, hashval_t);
 extern void **htab_find_slot_with_hash(htab_t, const void *, hashval_t, enum insert_option);
 extern void   htab_clear_slot(htab_t, void **);
 extern void   htab_remove_elt(htab_t, void *);

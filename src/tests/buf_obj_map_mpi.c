@@ -52,7 +52,7 @@ main(int argc, char **argv)
 #else
     int comm = 1;
 #endif
-    float *   x;
+    float    *x;
     int       x_dim        = 64;
     long      numparticles = 4;
     uint64_t  dims[1]      = {numparticles}; // {8388608};

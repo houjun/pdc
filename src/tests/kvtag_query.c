@@ -37,10 +37,10 @@ main()
 
     int         i;
     pdcid_t     pdc, cont_prop, cont, obj_prop1, obj_prop2, obj1, obj2;
-    uint64_t *  obj_ids = NULL, *obj_ids1 = NULL, *obj_ids2 = NULL;
+    uint64_t   *obj_ids = NULL, *obj_ids1 = NULL, *obj_ids2 = NULL;
     int         nobj;
     pdc_kvtag_t kvtag1, kvtag2, kvtag3;
-    char *      v1 = "value1";
+    char       *v1 = "value1";
     int         v2 = 2;
     double      v3 = 3.45;
 

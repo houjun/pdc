@@ -25,7 +25,7 @@ typedef struct H5Timer {
     double start;
     double end;
     size_t data_size;
-    char * name;
+    char  *name;
 } H5Timer;
 
 typedef struct H5TimerClass {

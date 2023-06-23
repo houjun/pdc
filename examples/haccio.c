@@ -26,11 +26,11 @@ mask | int16  | 2 bytes
  * ------------------
  */
 
-static char *         VAR_NAMES[NUM_VARS] = {"xx", "yy", "zz", "vx", "vy", "vz", "phi", "phd", "mask"};
+static char          *VAR_NAMES[NUM_VARS] = {"xx", "yy", "zz", "vx", "vy", "vz", "phi", "phd", "mask"};
 static pdc_var_type_t VAR_TYPES[NUM_VARS] = {PDC_FLOAT, PDC_FLOAT, PDC_FLOAT, PDC_FLOAT, PDC_FLOAT,
                                              PDC_FLOAT, PDC_FLOAT, PDC_INT64, PDC_INT16};
 static int            NUM_PARTICLES       = (1 * 1024 * 1024);
-void *                buffers[NUM_VARS];
+void                 *buffers[NUM_VARS];
 
 MPI_Comm comm;
 

@@ -17,14 +17,14 @@ typedef struct H5D_rw_multi_t {
     hid_t mem_type_id;   /* memory datatype ID */
     hid_t mem_space_id;  /* memory selection dataspace ID */
     union {
-        void *      rbuf; /* pointer to read buffer */
+        void       *rbuf; /* pointer to read buffer */
         const void *wbuf; /* pointer to write buffer */
     } u;
 } H5D_rw_multi_t;
 #endif
 
 typedef struct multidataset_array {
-    std::vector<char *> * temp_mem;
+    std::vector<char *>  *temp_mem;
     std::vector<hsize_t> *start;
     std::vector<hsize_t> *end;
     hsize_t               last_end;
